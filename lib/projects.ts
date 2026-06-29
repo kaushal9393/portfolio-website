@@ -1,0 +1,47 @@
+export const projects = [
+  {
+    title: "SmartGodown.in — Smart Inventory Management",
+    description: "A full-stack smart inventory management platform for godown/warehouse operations — real-time stock tracking, role-based access, automated alerts, and analytics dashboard",
+    tags: ["Next.js", "TypeScript", "MongoDB", "Node.js", "Tailwind CSS"],
+    githubUrl: "#",
+    liveUrl: "https://smartgodown.in",
+    image: "/images/smartgodown.png",
+    featured: true, // Used for the "LIVE" badge and highlight border
+  },
+  {
+    title: "AI-Finance & Productivity-Tools",
+    description: "AI-powered platform simplifying financial management through intelligent automation",
+    tags: ["Next.js", "Node.js", "TypeScript", "MongoDB"],
+    githubUrl: "#",
+    liveUrl: "https://ai-finance-swart.vercel.app/",
+    image: "/images/finance.png",
+    featured: false,
+  },
+  {
+    title: "Impulse Lab — Health Diagnostics",
+    description: "Accessible health diagnostics platform with appointment management and lab test tracking",
+    tags: ["React", "Node.js", "MongoDB"],
+    githubUrl: "#",
+    liveUrl: "https://impulse-smoky.vercel.app/",
+    image: "/images/impulse.png",
+    featured: false,
+  },
+  {
+    title: "FN Nexus AI — Personal Finance Infrastructure",
+    description: "AI-driven personal finance infrastructure with multi-step onboarding and analytics",
+    tags: ["Next.js", "TypeScript", "AI/ML"],
+    githubUrl: "#",
+    liveUrl: "https://ai-puce-mu.vercel.app/",
+    image: "/images/nexus.png",
+    featured: false,
+  },
+  {
+    title: "Emi Expense Manager App",
+    description: "An intuitive mobile application that helps you easily track and manage your daily expenses.",
+    tags: ["React Native", "JavaScript", "Mobile App"],
+    githubUrl: "#",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.emiexpense.app",
+    image: "/images/emi.jpeg",
+    featured: false,
+  },
+];
