@@ -1,73 +1,19 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Float, TorusKnot } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.esm";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
 
-function StarBackground(props: any) {
-  const ref = useRef<any>();
-  // 5001 is a multiple of 3 (1667 points * 3 coordinates) to prevent NaN errors in THREE.js
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5001), { radius: 1.5 }));
-
-  useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
-  });
-
-  return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial
-          transparent
-          color="#00ff88"
-          size={0.002}
-          sizeAttenuation={true}
-          depthWrite={false}
-        />
-      </Points>
-    </group>
-  );
-}
-
-function FloatingShape() {
-  return (
-    <Float speed={2} rotationIntensity={2} floatIntensity={2}>
-      <TorusKnot args={[1, 0.3, 128, 16]} scale={0.7}>
-        <meshStandardMaterial 
-          color="#00ff88" 
-          wireframe 
-          transparent
-          opacity={0.3}
-          emissive="#00ff88"
-          emissiveIntensity={0.5}
-        />
-      </TorusKnot>
-    </Float>
-  );
-}
+const HeroBackground = dynamic(() => import("./HeroBackground"), { ssr: false });
+const HeroShape = dynamic(() => import("./HeroShape"), { ssr: false });
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <section id="home" className="relative h-screen w-full flex flex-col justify-center overflow-hidden bg-background">
       {/* 3D Background */}
-      {mounted && (
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Canvas camera={{ position: [0, 0, 1] }}>
-            <StarBackground />
-          </Canvas>
-        </div>
-      )}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <HeroBackground />
+      </div>
 
       {/* Social Sidebar */}
       <div className="hidden md:flex flex-col gap-6 absolute left-8 top-1/2 -translate-y-1/2 z-20">
@@ -145,13 +91,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="hidden lg:block h-[500px] w-full"
           >
-            {mounted && (
-              <Canvas camera={{ position: [0, 0, 5] }}>
-                <ambientLight intensity={0.5} />
-                <directionalLight position={[10, 10, 5]} intensity={1} />
-                <FloatingShape />
-              </Canvas>
-            )}
+            <HeroShape />
           </motion.div>
           
         </div>
