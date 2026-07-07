@@ -24,18 +24,29 @@ export const metadata: Metadata = {
   description: "Kaushal Giri is a full-stack developer specializing in React, Next.js, Node.js, and MongoDB. Explore projects, skills, and experience. Based in India.",
   authors: [{ name: "Kaushal Giri" }],
   keywords: "Kaushal Giri, Full Stack Developer, React Developer, Next.js, Node.js, MongoDB, Web Developer India, Portfolio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   alternates: {
-    canonical: "https://kaushalgiri.netlify.app",
+    canonical: "https://girikaushal.netlify.app",
   },
   openGraph: {
     type: "website",
     title: "Kaushal Giri | Full-Stack Developer",
     description: "Full-stack developer with 2+ years of experience building real-world apps using React, Next.js, and Node.js.",
-    url: "https://kaushalgiri.netlify.app",
+    url: "https://girikaushal.netlify.app",
     siteName: "Kaushal Giri Portfolio",
     images: [
       {
-        url: "https://kaushalgiri.netlify.app/og-image.png",
+        url: "https://girikaushal.netlify.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kaushal Giri — Full-Stack Developer Portfolio",
       },
     ],
   },
@@ -43,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaushal Giri | Full-Stack Developer",
     description: "Full-stack developer — React, Next.js, Node.js, MongoDB.",
-    images: ["https://kaushalgiri.netlify.app/og-image.png"],
+    images: ["https://girikaushal.netlify.app/og-image.png"],
   },
 };
 
@@ -55,6 +66,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="30 days" />
+        <meta name="rating" content="general" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -62,8 +76,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Kaushal Giri",
-              "url": "https://kaushalgiri.netlify.app",
-              "image": "https://kaushalgiri.netlify.app/profile.jpeg",
+              "url": "https://girikaushal.netlify.app",
+              "image": "https://girikaushal.netlify.app/profile.jpeg",
+              "description": "Full-stack developer from India specializing in React, Next.js, Node.js, and MongoDB. Building real-world web and mobile apps.",
               "jobTitle": "Full-Stack Developer",
               "worksFor": {
                 "@type": "Organization",
@@ -71,7 +86,7 @@ export default function RootLayout({
               },
               "alumniOf": {
                 "@type": "CollegeOrUniversity",
-                "name": "[Add your college name here]" // TODO: Replace with real college name
+                "name": "Pune University"
               },
               "address": {
                 "@type": "PostalAddress",
@@ -80,7 +95,7 @@ export default function RootLayout({
               "sameAs": [
                 "https://github.com/kaushal9393",
                 "https://www.linkedin.com/in/kaushal-giri-24a47b346",
-                "https://kaushalgiri.netlify.app"
+                "https://girikaushal.netlify.app"
               ],
               "knowsAbout": [
                 "React.js", "Next.js", "Node.js", "MongoDB", 

@@ -83,6 +83,7 @@ export default function Hero() {
               <a
                 href="/resume.pdf"
                 download="Kaushal_Giri_Resume.pdf"
+                aria-label="Download Kaushal Giri's resume as PDF"
                 className="group relative inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-white/20 rounded-full text-primary font-medium overflow-hidden transition-all hover:border-accent hover:text-accent"
               >
                 <span className="relative z-10">Download Resume</span>

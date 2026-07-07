@@ -37,24 +37,22 @@ export default function About() {
             className="space-y-6 text-muted text-lg leading-relaxed"
           >
             <p>
-              I'm Kaushal Giri, a full-stack developer from [Your City], India, {/* TODO: Replace with real city */}
-              with [X] years {/* TODO: Replace with real years */} of hands-on experience building production-grade 
-              web and mobile applications.
+              I'm Kaushal Giri, a full-stack developer from Pune, India.
             </p>
             <p>
-              I started coding because [add your real reason]. {/* TODO: Replace with real reason */}
-              That curiosity turned into a craft.
+              I have 2 years of hands-on experience building production-grade 
+              web and mobile applications using React, Next.js, Node.js, and MongoDB.
             </p>
             <p>
-              I specialise in the React + Node.js ecosystem — from designing REST APIs 
-              and database schemas to building responsive UIs that actually feel good 
-              to use. My project SmartGodown is a real inventory management system used 
-              by [X users / a client], not just a demo. {/* TODO: Replace with real user count */}
+              I got into development because I've always been fascinated by how a few lines of code can solve real-world problems and bring ideas to life.
             </p>
             <p>
-              When I'm not coding, I'm [one real personal detail]. {/* TODO: Replace with personal detail */}
-              I'm currently [open to full-time roles / freelance projects / internships] {/* TODO: Replace with role type */}
-              — if you have something interesting, let's talk.
+              My strongest work is SmartGodown — a real inventory management system 
+              used by a local business to manage 500+ product entries. I've also published an Android app 
+              on the Play Store, which pushed me to think about real users, not just code.
+            </p>
+            <p>
+              Currently open to full-time roles. If you have something interesting, let's talk.
             </p>
 
             {/* Stats */}
@@ -85,6 +83,7 @@ export default function About() {
                 src="/profile.jpeg" // Using the correctly named image
                 alt="Kaushal Giri"
                 fill
+                priority
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 400px"
               />
