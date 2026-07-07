@@ -1,12 +1,30 @@
-export const projects = [
+export type ProjectStatus = "LIVE" | "IN PROGRESS" | "ARCHIVED";
+
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  githubUrl: string;
+  liveUrl: string;
+  image: string;
+  featured?: boolean;
+  status?: ProjectStatus;
+  altText: string;
+  hasCaseStudy?: boolean;
+}
+
+export const projects: Project[] = [
   {
     title: "SmartGodown.in — Smart Inventory Management",
     description: "A full-stack smart inventory management platform for godown/warehouse operations. Built to handle real-time stock tracking, role-based access, and automated alerts. Currently used by 2 local businesses.",
-    tags: ["Next.js", "TypeScript", "MongoDB", "Node.js", "Tailwind CSS"],
+    tags: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Tailwind CSS"],
     githubUrl: "private", // Mark as private to show "Private Repo" in UI
     liveUrl: "https://smartgodown.in",
     image: "/images/smartgodown.png",
     featured: true, // Used for the "LIVE" badge and highlight border
+    status: "LIVE",
+    altText: "SmartGodown dashboard showing real-time stock tracking and alerts for inventory management",
+    hasCaseStudy: true,
   },
   {
     title: "AI-Finance & Productivity-Tools",
@@ -16,6 +34,8 @@ export const projects = [
     liveUrl: "https://ai-finance-swart.vercel.app/",
     image: "/images/finance.png",
     featured: true,
+    status: "LIVE",
+    altText: "AI-Finance dashboard automating personal finance workflows",
   },
   {
     title: "Impulse Lab — Health Diagnostics",
@@ -25,6 +45,8 @@ export const projects = [
     liveUrl: "https://impulse-smoky.vercel.app/",
     image: "/images/impulse.png",
     featured: false,
+    status: "IN PROGRESS",
+    altText: "Impulse Lab health diagnostics appointment booking and test tracking interface",
   },
   {
     title: "FN Nexus AI — Personal Finance Infrastructure",
@@ -34,6 +56,8 @@ export const projects = [
     liveUrl: "https://ai-puce-mu.vercel.app/",
     image: "/images/nexus.png",
     featured: false,
+    status: "ARCHIVED",
+    altText: "FN Nexus AI personal finance infrastructure analytics view",
   },
   {
     title: "Emi Expense Manager App",
@@ -43,5 +67,7 @@ export const projects = [
     liveUrl: "https://play.google.com/store/apps/details?id=com.emiexpense.app",
     image: "/images/emi.jpeg",
     featured: false,
+    status: "LIVE",
+    altText: "Emi Expense Manager mobile application showing daily expense charts",
   },
 ];

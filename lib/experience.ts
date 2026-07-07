@@ -2,7 +2,7 @@ export const experience = [
   {
     role: "Full Stack Developer Intern",
     company: "CodeClause",
-    duration: "Jan 2024 – Feb 2024",
+    duration: "Jan 2024 – Feb 2024 (concurrent)",
     location: "Remote",
     bullets: [
       "Built 3 web applications using modern frameworks, resulting in ~40% faster load times",
@@ -14,7 +14,7 @@ export const experience = [
   {
     role: "Web Developer Intern",
     company: "Bharat Intern",
-    duration: "Dec 2023 – Jan 2024",
+    duration: "Dec 2023 – Jan 2024 (concurrent)",
     location: "Remote",
     bullets: [
       "Developed 4 responsive UI components using React, increasing user engagement by ~25%",

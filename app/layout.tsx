@@ -98,8 +98,8 @@ export default function RootLayout({
                 "https://girikaushal.netlify.app"
               ],
               "knowsAbout": [
-                "React.js", "Next.js", "Node.js", "MongoDB", 
-                "Express.js", "Tailwind CSS", "Full-Stack Development"
+                "Next.js", "TypeScript", "FastAPI", "PostgreSQL", 
+                "React", "Node.js"
               ]
             })
           }}

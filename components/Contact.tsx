@@ -66,7 +66,9 @@ export default function Contact() {
           © {new Date().getFullYear()} Kaushal Giri. All rights reserved.
         </p>
         <p className="text-white/30 text-xs mt-2 font-mono">
-          Built with Next.js, TypeScript, and Tailwind CSS.
+          <a href="https://github.com/kaushal9393" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+            Built with Next.js & Tailwind
+          </a>
         </p>
       </footer>
     </section>
