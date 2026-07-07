@@ -22,8 +22,8 @@ export default function Contact() {
           {/* Subtle border highlight on hover */}
           <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/20 rounded-3xl transition-colors duration-500" />
           
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Let's Work <span className="text-accent">Together</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+            Let's Build Something <span className="text-accent">Together</span>
           </h2>
           
           <p className="text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
@@ -33,20 +33,27 @@ export default function Contact() {
 
           <a
             href="mailto:kaushalgiri8080@gmail.com"
-            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-primary text-background font-bold text-lg rounded-full transition-all duration-300 hover:bg-accent hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] group/btn relative overflow-hidden"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-primary text-background font-bold text-lg rounded-full transition-all duration-300 hover:bg-accent hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] group/btn relative overflow-hidden mb-4"
           >
             <span className="relative z-10">Send me an email</span>
             <FiArrowRight className="relative z-10 group-hover/btn:translate-x-1 transition-transform" />
           </a>
 
-          <div className="flex justify-center gap-4 mt-12 pt-12 border-t border-white/5">
-            <a href="https://github.com/kaushal9393" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300">
+          <div className="text-muted text-sm mb-2">
+            Or email me directly at: <a href="mailto:kaushalgiri8080@gmail.com" className="text-primary hover:text-accent underline underline-offset-4 transition-colors">kaushalgiri8080@gmail.com</a>
+          </div>
+          <p className="text-muted text-sm italic">
+            I usually reply within 24 hours.
+          </p>
+
+          <div className="flex justify-center gap-4 mt-10 pt-10 border-t border-white/5">
+            <a href="https://github.com/kaushal9393" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="p-4 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300">
               <FiGithub size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/kaushal-giri-24a47b346" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300">
+            <a href="https://www.linkedin.com/in/kaushal-giri-24a47b346" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-4 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300">
               <FiLinkedin size={24} />
             </a>
-            <a href="mailto:kaushalgiri8080@gmail.com" className="p-4 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300">
+            <a href="mailto:kaushalgiri8080@gmail.com" aria-label="Send Email" className="p-4 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:border-accent/50 hover:bg-accent/10 transition-all duration-300">
               <FiMail size={24} />
             </a>
           </div>

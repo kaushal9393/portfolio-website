@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiArrowDown, FiDownload } from "react-icons/fi";
 
 const HeroBackground = dynamic(() => import("./HeroBackground"), { ssr: false });
 const HeroShape = dynamic(() => import("./HeroShape"), { ssr: false });
@@ -17,13 +17,13 @@ export default function Hero() {
 
       {/* Social Sidebar */}
       <div className="hidden md:flex flex-col gap-6 absolute left-8 top-1/2 -translate-y-1/2 z-20">
-        <a href="https://github.com/kaushal9393" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent transition-colors hover:-translate-y-1 duration-300">
+        <a href="https://github.com/kaushal9393" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="text-muted hover:text-accent transition-colors hover:-translate-y-1 duration-300">
           <FiGithub size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/kaushal-giri-24a47b346" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent transition-colors hover:-translate-y-1 duration-300">
+        <a href="https://www.linkedin.com/in/kaushal-giri-24a47b346" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-muted hover:text-accent transition-colors hover:-translate-y-1 duration-300">
           <FiLinkedin size={24} />
         </a>
-        <a href="mailto:kaushalgiri8080@gmail.com" className="text-muted hover:text-accent transition-colors hover:-translate-y-1 duration-300">
+        <a href="mailto:kaushalgiri8080@gmail.com" aria-label="Send Email" className="text-muted hover:text-accent transition-colors hover:-translate-y-1 duration-300">
           <FiMail size={24} />
         </a>
         <div className="w-[1px] h-24 bg-white/10 mx-auto mt-4"></div>
@@ -52,10 +52,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-6"
             >
-              Full-Stack <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">
-                Developer
-              </span>
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">Kaushal Giri</span><br />
+              <span className="text-3xl md:text-5xl lg:text-6xl text-primary">Full-Stack Developer</span>
             </motion.h1>
 
             <motion.p
@@ -72,6 +70,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-4"
             >
               <a
                 href="#projects"
@@ -80,6 +79,14 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-accent/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10">View Projects</span>
                 <FiArrowDown className="relative z-10 group-hover:rotate-[-90deg] transition-transform duration-300" />
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Kaushal_Giri_Resume.pdf"
+                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-white/20 rounded-full text-primary font-medium overflow-hidden transition-all hover:border-accent hover:text-accent"
+              >
+                <span className="relative z-10">Download Resume</span>
+                <FiDownload className="relative z-10 group-hover:translate-y-1 transition-transform duration-300" />
               </a>
             </motion.div>
           </div>

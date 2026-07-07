@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
@@ -15,9 +15,36 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0a0a0f",
+};
+
 export const metadata: Metadata = {
-  title: "Kaushal Giri | Full-Stack Developer",
-  description: "I craft beautiful, performant web experiences using modern technologies. Specializing in React, Next.js, and full-stack development.",
+  title: "Kaushal Giri | Full-Stack Developer — React, Next.js, Node.js",
+  description: "Kaushal Giri is a full-stack developer specializing in React, Next.js, Node.js, and MongoDB. Explore projects, skills, and experience. Based in India.",
+  authors: [{ name: "Kaushal Giri" }],
+  keywords: "Kaushal Giri, Full Stack Developer, React Developer, Next.js, Node.js, MongoDB, Web Developer India, Portfolio",
+  alternates: {
+    canonical: "https://kaushalgiri.netlify.app",
+  },
+  openGraph: {
+    type: "website",
+    title: "Kaushal Giri | Full-Stack Developer",
+    description: "Full-stack developer with 2+ years of experience building real-world apps using React, Next.js, and Node.js.",
+    url: "https://kaushalgiri.netlify.app",
+    siteName: "Kaushal Giri Portfolio",
+    images: [
+      {
+        url: "https://kaushalgiri.netlify.app/og-image.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kaushal Giri | Full-Stack Developer",
+    description: "Full-stack developer — React, Next.js, Node.js, MongoDB.",
+    images: ["https://kaushalgiri.netlify.app/og-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +54,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Kaushal Giri",
+              "url": "https://kaushalgiri.netlify.app",
+              "image": "https://kaushalgiri.netlify.app/profile.jpeg",
+              "jobTitle": "Full-Stack Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance / Open to Work"
+              },
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "[Add your college name here]" // TODO: Replace with real college name
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://github.com/kaushal9393",
+                "https://www.linkedin.com/in/kaushal-giri-24a47b346",
+                "https://kaushalgiri.netlify.app"
+              ],
+              "knowsAbout": [
+                "React.js", "Next.js", "Node.js", "MongoDB", 
+                "Express.js", "Tailwind CSS", "Full-Stack Development"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} bg-background text-primary antialiased`}>
         <ScrollProgress />
         <CursorGlow />

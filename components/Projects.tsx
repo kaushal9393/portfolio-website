@@ -57,7 +57,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`Screenshot of ${project.title} — ${project.description.split('.')[0]}`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -93,14 +93,23 @@ export default function Projects() {
 
                 {/* Footer Buttons */}
                 <div className="flex gap-4 mt-auto pt-4 border-t border-white/10">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium text-muted hover:text-primary transition-colors"
-                  >
-                    <FiGithub /> Code
-                  </a>
+                  {project.githubUrl === "private" ? (
+                    <span
+                      title="This project is under NDA / private"
+                      className="flex items-center gap-2 text-sm font-medium text-muted/50 cursor-not-allowed"
+                    >
+                      <FiGithub /> Private Repo
+                    </span>
+                  ) : (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium text-muted hover:text-primary transition-colors"
+                    >
+                      <FiGithub /> Code
+                    </a>
+                  )}
                   <a
                     href={project.liveUrl}
                     target="_blank"

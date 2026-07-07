@@ -1,14 +1,21 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { skills } from "@/lib/skills";
+import { 
+  SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiMongodb, 
+  SiTailwindcss, SiExpress, SiGit, SiGithub, SiJavascript, 
+  SiHtml5, SiCss, SiMysql, SiFigma, SiFirebase, 
+  SiNetlify, SiVercel 
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { TbApi } from "react-icons/tb";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -17,6 +24,43 @@ const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100 } },
 };
+
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React.js", icon: SiReact, color: "#61DAFB", level: "2 yrs · 5+ projects" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff", level: "1 yr · 3+ projects" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: SiCss, color: "#1572B6" },
+    ]
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933", level: "2 yrs · 4+ projects" },
+      { name: "Express.js", icon: SiExpress, color: "#ffffff" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248", level: "Proficient" },
+      { name: "REST APIs", icon: TbApi, color: "#ffffff" },
+      { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+    ]
+  },
+  {
+    title: "Tools & Others",
+    skills: [
+      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+      { name: "VS Code", icon: VscVscode, color: "#007ACC" },
+      { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
+      { name: "Vercel", icon: SiVercel, color: "#000000" },
+    ]
+  }
+];
 
 export default function Skills() {
   return (
@@ -35,38 +79,44 @@ export default function Skills() {
           <div className="w-20 h-1 bg-accent rounded-full"></div>
         </motion.div>
 
-        {/* Bento Grid */}
+        {/* 3-Column Grid for Categories */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
         >
-          {skills.map((skill, index) => {
-            const Icon = skill.icon;
-            // Make some cards span 2 columns for the bento effect (e.g. index 0 and 5)
-            const isWide = index === 0 || index === 5;
-            return (
-              <motion.div
-                key={skill.name}
-                variants={itemVariants}
-                whileHover={{ y: -4 }}
-                className={`flex flex-col items-center justify-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(0,255,136,0.15)] group ${
-                  isWide ? "col-span-2 md:col-span-2" : "col-span-1"
-                }`}
-              >
-                <Icon
-                  size={48}
-                  style={{ color: skill.color }}
-                  className="mb-4 transition-transform duration-300 group-hover:scale-110"
-                />
-                <span className="font-medium text-primary text-center">
-                  {skill.name}
-                </span>
-              </motion.div>
-            );
-          })}
+          {skillCategories.map((category) => (
+            <motion.div
+              key={category.title}
+              variants={itemVariants}
+              className="p-6 md:p-8 rounded-2xl bg-surface/50 border border-white/10 flex flex-col h-full hover:border-accent/30 transition-colors"
+            >
+              <h3 className="text-2xl font-display font-semibold mb-8 text-primary border-b border-white/10 pb-4">
+                {category.title}
+              </h3>
+              
+              <div className="flex flex-col gap-6 flex-grow">
+                {category.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div key={skill.name} className="flex items-center gap-4 group">
+                      <div className="p-3 rounded-xl bg-white/5 border border-white/5 group-hover:border-accent/30 transition-colors">
+                        <Icon size={28} style={{ color: skill.color }} className="group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-medium text-primary text-lg">{skill.name}</span>
+                        {skill.level && (
+                          <span className="text-sm text-accent/80 font-mono mt-0.5">{skill.level}</span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Callout Box */}
